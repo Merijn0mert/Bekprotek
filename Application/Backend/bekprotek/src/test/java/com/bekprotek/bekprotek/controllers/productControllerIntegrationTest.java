@@ -75,7 +75,7 @@ public class productControllerIntegrationTest {
                 .andExpect(status().isNotFound());
     }
 
-/*    @Test
+    @Test
     void testCreateProduct() throws Exception {
         ResultActions resultActions = mockMvc.perform(post("/products/addproduct")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -88,7 +88,7 @@ public class productControllerIntegrationTest {
                 Long.parseLong(resultActions.andReturn().getResponse().getContentAsString().split("\"id\":")[1].split(",")[0].trim()));
         assertTrue(savedProduct.isPresent());
         assertEquals("New Product", savedProduct.get().getName());
-    }*/
+    }
 
 /*    @Test
     void testCreateProductWithEmptyName() throws Exception {
