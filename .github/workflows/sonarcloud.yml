@@ -39,7 +39,7 @@ jobs:
         run: |
           cd Application/Backend/bekprotek
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=Merijn0mert_S3_BekProtek \
+            -Dsonar.projectKey=Merijn0mert_BekProtek \
             -Dsonar.organization=merijn0mert \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
