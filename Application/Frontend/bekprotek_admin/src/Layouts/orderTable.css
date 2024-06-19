@@ -1,0 +1,43 @@
+table {
+
+    justify-content: space-between;
+    text-align: left;
+    border-collapse: collapse;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    width: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+td, th{
+
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+}
+
+
+tr:hover.info{
+    background-color: #ababab ;
+}
+
+button{
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    display: inline-flex;
+    margin: auto;
+    align: center;
+}
+button.accept{
+  background-color: green;
+    left: 30px;
+}
+button.decline{
+  background-color: red;
+    left: 40px;
+}

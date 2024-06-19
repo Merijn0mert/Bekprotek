@@ -1,0 +1,19 @@
+table {
+
+    justify-content: space-between;
+    text-align: left;
+    border-collapse: collapse;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    width: 50%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+td, th{
+
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}

@@ -1,0 +1,30 @@
+.productDetail{
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 1250px;
+    height: 600px;
+}
+
+.productImage{
+    width: 500px;
+    height:450px;
+    position:relative;
+    float: left;
+    left: 25px;
+    background-color:black;
+    color: white;
+}
+
+.productTitle{
+    position:relative;
+    initial-text-align: auto;
+    top: 50px;
+
+}
+.productDesc{
+    position:relative;
+    text-align: center;
+    top: 100px;
+}

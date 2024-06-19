@@ -1,0 +1,52 @@
+.navbar-header {
+    background-color: #37383F;
+    text-align: end;
+
+}
+
+.nav-box {
+    color: white;
+    text-align: start;
+
+}
+.nav-box h3{
+
+    position:relative;
+    top:20px;
+    left:30px;
+}
+
+.nav-body {
+    text-align: end ;
+
+
+}
+.nav-body li{
+    font-size: 17px;
+    display:inline-block;
+    position:relative;
+    right:30px;
+
+}
+.nav-body a{
+
+    text-decoration: none;
+    padding: 30px;
+    font-size: 17px;
+    color: white;
+
+
+}
+a:hover{
+    text-decoration: grey;
+    padding: 30px;
+    font-size: 17px;
+    background-color: white;
+    color:grey;
+}
+.nav-item:hover {
+    text-decoration: grey;
+    padding: 14px 16px;
+    font-size: 17px;
+    display:inline;
+}

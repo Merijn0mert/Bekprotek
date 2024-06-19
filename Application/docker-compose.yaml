@@ -1,0 +1,36 @@
+services:
+  bekprotek_backend:
+    image: merijn0mert/bekprotek:Backend_Latest
+    container_name: bekprotek_backend
+    pull_policy: always
+    build: .
+    ports:
+      - "8081:8081"
+  bekprotek_frontend:
+    image: merijn0mert/bekprotek:Frontend_Latest
+    container_name: bekprotek_frontend
+    pull_policy: always
+    build: .
+    ports:
+      - "8080:8080"
+  bekprotek_admin:
+    image: merijn0mert/bekprotek:FrontendAdmin_Latest
+    container_name: bekprotek_admin
+    pull_policy: always
+    build: .
+    ports:
+      - "8082:8082"
+  bekprotek_db:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: bekprotek_db
+    pull_policy: always
+    build: .
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "y"
+      MSSQL_SA_PASSWORD: "Bekpr0tek"
+    volumes:
+      - "./mssql/data/:/var/opt/mssql/data/"
+      - "./mssql/log/:/var/opt/mssql/log/"
+      - "./mssql/secrets/:/var/opt/mssql/secrets/"
