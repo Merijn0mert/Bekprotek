@@ -171,7 +171,7 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName
       };
-      authService.sendRegister(JSON.stringify(data))
+      authService.sendRegister(data)
     },
 
     loginUser() {

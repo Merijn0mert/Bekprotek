@@ -29,10 +29,10 @@ async function sendRegister(data) {
             headers: {
                 'Content-Type': 'application/json', // setting the content type to JSON
             },
-            body: data, // converting data to JSON string
         });
 
-        const result = await response.json(); // assuming the backend returns JSON
+        const result = response.data; // assuming the backend returns JSON
+        window.location.href = '${BASE_API_URL}/';
         return result; // returning the parsed JSON
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);

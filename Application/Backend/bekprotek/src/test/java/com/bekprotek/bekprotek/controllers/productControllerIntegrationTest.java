@@ -2,7 +2,7 @@ package com.bekprotek.bekprotek.controllers;
 
 import com.bekprotek.bekprotek.entities.productEntity;
 import com.bekprotek.bekprotek.repositories.productRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
 import java.util.Optional;
-
+import com.google.gson.Gson;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -32,7 +32,8 @@ public class productControllerIntegrationTest {
     private productRepository productRepository;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    //private ObjectMapper objectMapper;
+    Gson gson = new Gson();
 
     private productEntity existingProduct;
     private productEntity newProduct;
@@ -79,7 +80,8 @@ public class productControllerIntegrationTest {
     void testCreateProduct() throws Exception {
         ResultActions resultActions = mockMvc.perform(post("/products/addproduct")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(newProduct)))
+                        .content(gson.toJson(newProduct)))
+                        //.content(objectMapper.writeValueAsString(newProduct)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name").value("New Product"));
 
@@ -90,31 +92,32 @@ public class productControllerIntegrationTest {
         assertEquals("New Product", savedProduct.get().getName());
     }
 
-/*    @Test
+    @Test
     void testCreateProductWithEmptyName() throws Exception {
         newProduct.setName("");
 
         mockMvc.perform(post("/products/addproduct")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(newProduct)))
+                        .content(gson.toJson(newProduct)))
                 .andExpect(status().isInternalServerError());
-    }*/
+    }
 
-/*    @Test
+    @Test
     void testCreateProductWithEmptyDescription() throws Exception {
         newProduct.setDesc("");
 
         mockMvc.perform(post("/products/addproduct")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(newProduct)))
+                        .content(gson.toJson(newProduct)))
                 .andExpect(status().isInternalServerError());
-    }*/
+    }
 
 /*    @Test
     void testCreateNullProduct() throws Exception {
+        newProduct= null;
         mockMvc.perform(post("/products/addproduct")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(null)))
+                        .content(gson.toJson(newProduct)))
                 .andExpect(status().isInternalServerError());
     }*/
 }
